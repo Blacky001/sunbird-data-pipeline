@@ -13,7 +13,7 @@
 - name: Download Scala 2.11.8
   become: yes
   become_user: "{{ analytics_user }}"
-  shell: wget -O {{ analytics.soft_path }}/scala-{{ scala_version }}.tgz https://downloads.lightbend.com/scala/{{ scala_version }}/scala-{{ scala_version }}.tgz
+  shell: wget -O {{ analytics.soft_path }}/scala-{{ scala_version }}.tgz https://downloads.lightbend.com/scala/{{ scala_version }}/scala-{{ scala_version }}.tgz --no-check-certificate
 
 - name: Unarchive Scala 2.11.8
   become: yes
