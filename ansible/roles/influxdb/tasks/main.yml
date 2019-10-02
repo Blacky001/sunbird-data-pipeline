@@ -3,7 +3,7 @@
   #hostname: name={{ ansible_hostname }}
 
 - name: Import InfluxDB GPG signing key
-  apt_key: url=https://repos.influxdata.com/influxdb.key state=present
+  apt_key: url=https://repos.influxdata.com/influxdb.key state=present validate_certs=no
 
 - name: Add InfluxDB repository
   apt_repository: repo='deb https://repos.influxdata.com/ubuntu trusty stable' state=present
@@ -42,6 +42,7 @@
   get_url:
     url="{{ influxdb_relay_deb_link }}"
     dest="/tmp/{{ influxdb_relay_deb_file }}"
+    validate_certs=no
   when: influxdb_relay_deb_package_name.rc == 1
 
 - name: Install influxdb_relay_deb_package_name
