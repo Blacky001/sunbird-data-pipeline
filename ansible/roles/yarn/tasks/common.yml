@@ -8,6 +8,7 @@
       group: hadoop
       creates: "{{hadoop_yarn_home}}"
       remote_src: yes
+      validate_certs: no
 
   - name: Creates symlink
     file:
@@ -44,6 +45,7 @@
       dest: "{{hadoop_yarn_home}}/share/hadoop/hdfs/lib/"
       owner: hduser
       group: hadoop
+      validate_certs: no
     with_items:
       - clapper/grizzled-slf4j_2.10/1.0.1/grizzled-slf4j_2.10-1.0.1.jar
       - apache/samza/samza-yarn_2.10/0.8.0/samza-yarn_2.10-0.8.0.jar
@@ -56,6 +58,7 @@
       owner: hduser
       group: hadoop
       remote_src: yes
+      validate_certs: no
 
   - name: Creates symlink
     file:
