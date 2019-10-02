@@ -3,8 +3,7 @@
 - name: Download Apache Spark 2.0.1 hadoop 2.7
   become: yes
   become_user: "{{ analytics_user }}"
-  get_url: url={{ spark_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7.tgz force=no owner={{ analytics_user }} group={{ analytics_group }}
-  validate_certs: no
+  get_url: url={{ spark_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7.tgz force=no owner={{ analytics_user }} group={{ analytics_group }} validate_certs=no
 
 - name: Unarchive Spark 2.0.1 hadoop 2.7
   become: yes
@@ -29,8 +28,7 @@
 - name: Download Guava 19.0 and copy to Spark jars folder
   become: yes
   become_user: "{{ analytics_user }}"
-  get_url: url={{ guava_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7/jars/guava-19.0.jar timeout=1000 force=no owner={{ analytics_user }} group={{ analytics_group }}
-  validate_certs: no
+  get_url: url={{ guava_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7/jars/guava-19.0.jar timeout=1000 force=no owner={{ analytics_user }} group={{ analytics_group }} validate_certs=no
 
 - name: Remove jets3t 0.9.3 from Spark jars folder
   become: yes
@@ -40,14 +38,12 @@
 - name: Download jets3t 0.9.4 and copy to Spark jars folder
   become: yes
   become_user: "{{ analytics_user }}"
-  get_url: url={{ jets3t_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7/jars/jets3t-0.9.4.jar timeout=1000 force=no owner={{ analytics_user }} group={{ analytics_group }}
-  validate_certs: no
+  get_url: url={{ jets3t_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7/jars/jets3t-0.9.4.jar timeout=1000 force=no owner={{ analytics_user }} group={{ analytics_group }} validate_certs=no
 
 - name: Download hadoop-aws 2.7.3 and copy to Spark jars folder
   become: yes
   become_user: "{{ analytics_user }}"
-  get_url: url={{ hadoop_aws_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7/jars/hadoop-aws-2.7.3.jar timeout=1000 force=no owner={{ analytics_user }} group={{ analytics_group }}
-  validate_certs: no
+  get_url: url={{ hadoop_aws_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7/jars/hadoop-aws-2.7.3.jar timeout=1000 force=no owner={{ analytics_user }} group={{ analytics_group }} validate_certs=no
 
 - name: Remove java-xmlbuilder 1.0 from Spark jars folder
   become: yes
@@ -57,8 +53,7 @@
 - name: Download java-xmlbuilder 1.1 in to Spark jars folder
   become: yes
   become_user: "{{ analytics_user }}"
-  get_url: url={{ java_xmlbuilder_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7/jars/java-xmlbuilder-1.1.jar timeout=1000 force=no owner={{ analytics_user }} group={{ analytics_group }}
-  validate_certs: no
+  get_url: url={{ java_xmlbuilder_url }} dest={{ analytics.home }}/spark-2.0.1-bin-hadoop2.7/jars/java-xmlbuilder-1.1.jar timeout=1000 force=no owner={{ analytics_user }} group={{ analytics_group }} validate_certs=no
 
 - name: Update spark default conf
   become: yes
@@ -95,8 +90,7 @@
 - name: Download Kafka-2.11
   become: yes
   become_user: "{{ analytics_user }}"
-  get_url: url=http://downloads.mesosphere.com/kafka/assets/kafka_2.11-0.10.1.0.tgz dest={{ analytics.home }}/kafka_2.11-0.10.1.0.tgz force=no owner={{ analytics_user }} group={{ analytics_group }}
-  validate_certs: no
+  get_url: url=http://downloads.mesosphere.com/kafka/assets/kafka_2.11-0.10.1.0.tgz dest={{ analytics.home }}/kafka_2.11-0.10.1.0.tgz force=no owner={{ analytics_user }} group={{ analytics_group }} validate_certs=no
   tags:
     - kafka-provision
 
