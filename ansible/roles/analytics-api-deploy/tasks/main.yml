@@ -37,6 +37,7 @@
   get_url:
     url: http://central.maven.org/maven2/io/netty/netty-all/4.0.37.Final/netty-all-4.0.37.Final.jar
     dest: "{{ analytics_api.root }}/analytics-api-1.0/lib/"
+    validate_certs: no
 
 - name: Remove netty-all 4.0.29 from lib folder
   file: path={{ analytics_api.home }}/lib/io.netty.netty-all-4.0.29.Final.jar state=absent
