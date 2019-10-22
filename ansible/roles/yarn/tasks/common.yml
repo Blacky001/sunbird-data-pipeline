@@ -41,7 +41,7 @@
 
   - name: Downloading artifacts
     get_url:
-      url: "http://search.maven.org/remotecontent?filepath=org/{{item}}"
+      url: "https://search.maven.org/remotecontent?filepath=org/{{item}}"
       dest: "{{hadoop_yarn_home}}/share/hadoop/hdfs/lib/"
       owner: hduser
       group: hadoop
